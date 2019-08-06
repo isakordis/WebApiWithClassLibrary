@@ -10,40 +10,49 @@ namespace Netas.WebAPI.Controllers
 {
     public class ListController : ApiController
     {
-        
+        List newList { get; set; }
         public ListController()
         {
-           
+            newList = new List();
 
         }
+
+
+        [Route("api/list")]
         public List<Products> GetProducts()
         {
-            Data.List newList = new List();
-           return newList.GetProducts();
-            
-        }
-        public List<Products> GetProducts(int id)
-        {
-            List ll = new List();
-            return ll.GetProducts(id);
+            newList = new List();
+            return newList.GetProducts();
+
         }
 
-        public Products UpdatePro(int id,Products mp)
+        [Route("api/list/{id:int}")]
+        public Products GetProducts(int id)
         {
-            List ul = new List();
-            return ul.UpdateProducts(id, mp);
+            newList = new List();
+            return newList.GetProducts(id);
         }
-        public Products AddPro(Products mp)
+        [Route("api/list/update/{mp:Products}")]
+        public Products UpdatePro(Products mp)
         {
-            List ad = new List();
-            return ad.AddProducts(mp);
+            newList = new List();
+            return newList.UpdateProducts(mp);
         }
+
+        [Route("api/list/add/{mp:Products}")]
+        public void AddPro(Products mp)
+        {
+            newList = new List();
+
+        }
+
+        [Route("api/list/del/{id:int}")]
         public Products DelPro(int id)
         {
-            List del = new List();
-            return del.DeleteProducts(id);
+            newList = new List();
+            return newList.DeleteProducts(id);
         }
 
-       
+
     }
 }

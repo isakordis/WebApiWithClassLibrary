@@ -1,37 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using AttributeRouting.Web.Http;
 
 namespace Netas.Data
 {
-   public class List
+    public class List
     {
         public productEntities db { get; set; }
         public List()
         {
             db = new productEntities();
         }
+
+
+
         public List<Products> GetProducts()
         {
             return db.Products.ToList();
         }
-        public List<Products> GetProducts(int id)
+        public Products GetProducts(int id)
         {
-            var finded = db.Products.Where(sa => sa.p_id == id);
-            return finded.ToList();
-            
+            var finded = db.Products.Where(sa => sa.p_id == id).FirstOrDefault();
+            return finded;
+
         }
-        public Products AddProducts(Products pp)
+        public void AddProducts(Products pp)
         {
             try
             {
-                
-                var finded=db.Products.Add(pp);
-                
+
+                //var finded =db.Products.Add(pp);
+                db.Entry(pp).State = EntityState.Added;
                 db.SaveChanges();
-                return finded;
+
+
 
             }
             catch (Exception ex)
@@ -41,15 +48,15 @@ namespace Netas.Data
             }
         }
 
-        public Products UpdateProducts(int id,Products mp)
+        public Products UpdateProducts(Products mp)
         {
             try
             {
-                var finded = db.Products.FirstOrDefault(sa => sa.p_id == id);
-
-                finded.p_name = mp.p_name;
-                finded.p_category = mp.p_category;
-                finded.p_price = mp.p_price;
+                var finded = db.Products.Where(sa => sa.p_id == mp.p_id).FirstOrDefault();
+                db.Entry(finded).State = EntityState.Modified;
+                //finded.p_name = mp.p_name;
+                //finded.p_category = mp.p_category;
+                //finded.p_price = mp.p_price;
                 db.SaveChanges();
                 return finded;
             }
@@ -58,7 +65,7 @@ namespace Netas.Data
 
                 throw new Exception(ex.Message);
             }
-            
+
         }
         public Products DeleteProducts(int id)
         {
@@ -74,7 +81,7 @@ namespace Netas.Data
 
                 throw new Exception(ex.Message);
             }
-            
+
         }
 
 
