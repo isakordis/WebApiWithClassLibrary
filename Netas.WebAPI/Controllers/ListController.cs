@@ -37,10 +37,10 @@ namespace Netas.WebAPI.Controllers
         }
         //[Route("api/list/update/{mp:Products}")]
         [HttpPut]
-        public Products UpdatePro(int id,Products mp)
+        public Products UpdatePro(Products mp)
         {
             newList = new List();
-            return newList.UpdateProducts(id,mp);
+            return newList.UpdateProducts(mp);
         }
 
         //[Route("api/list/add/{mp:Products}")]

@@ -11,7 +11,7 @@ namespace Netas.Data
         List<Products> GetProducts();
         Products GetProducts(int id);
         void AddProducts(Products pp);
-        Products UpdateProducts(int id,Products mp);
+        Products UpdateProducts(Products mp);
         bool DeleteProducts(int id);
 
     }

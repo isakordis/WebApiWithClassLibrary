@@ -47,15 +47,16 @@ namespace Netas.Data
             }
         }
 
-        public Products UpdateProducts(int id,Products mp)
+        public Products UpdateProducts(Products mp)
         {
             try
             {
-                var finded = db.Products.FirstOrDefault(sa => sa.p_id == id);
-                finded.p_id = mp.p_id;
-                finded.p_name = mp.p_name;
-                finded.p_category = mp.p_category;
-                finded.p_price = mp.p_price;
+               // var finded = db.Products.FirstOrDefault(sa => sa.p_id == id);
+                //finded.p_id = mp.p_id;
+                //finded.p_name = mp.p_name;
+                //finded.p_category = mp.p_category;
+                //finded.p_price = mp.p_price;
+                db.Entry(mp).State = EntityState.Modified;
                 db.SaveChanges();
                 return mp;
             }
