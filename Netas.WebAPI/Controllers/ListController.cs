@@ -16,9 +16,11 @@ namespace Netas.WebAPI.Controllers
             newList = new List();
 
         }
+        
 
 
-        [Route("api/list")]
+        //[Route("api/list")]
+        [HttpGet]
         public List<Products> GetProducts()
         {
             newList = new List();
@@ -26,31 +28,37 @@ namespace Netas.WebAPI.Controllers
 
         }
 
-        [Route("api/list/{id:int}")]
+        //[Route("api/list/{id:int}")]
+        [HttpGet]
         public Products GetProducts(int id)
         {
             newList = new List();
             return newList.GetProducts(id);
         }
-        [Route("api/list/update/{mp:Products}")]
-        public Products UpdatePro(Products mp)
+        //[Route("api/list/update/{mp:Products}")]
+        [HttpPut]
+        public Products UpdatePro(int id,Products mp)
         {
             newList = new List();
-            return newList.UpdateProducts(mp);
+            return newList.UpdateProducts(id,mp);
         }
 
-        [Route("api/list/add/{mp:Products}")]
-        public void AddPro(Products mp)
+        //[Route("api/list/add/{mp:Products}")]
+        [HttpPost]
+        public Products AddPro(Products mp)
         {
             newList = new List();
-
+            newList.AddProducts(mp);
+            return newList.GetProducts(mp.p_id);
         }
 
-        [Route("api/list/del/{id:int}")]
-        public Products DelPro(int id)
+        //[Route("api/list/del/{id:int}")]
+        [HttpDelete]
+        public bool DelPro(int id)
         {
-            newList = new List();
-            return newList.DeleteProducts(id);
+                  newList = new List();
+            newList.DeleteProducts(id);
+            return true;
         }
 
 

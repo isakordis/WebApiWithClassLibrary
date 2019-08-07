@@ -1,0 +1,12 @@
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\obj\Debug\Netas.Data.csprojAssemblyReference.cache
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\obj\Debug\Netas.Data.csproj.CoreCompileInputs.cache
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\Netas.Data.dll.config
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\Netas.Data.dll
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\Netas.Data.pdb
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\EntityFramework.dll
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\EntityFramework.xml
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\obj\Debug\Netas.Data.csproj.CopyComplete
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\obj\Debug\Netas.Data.dll
+D:\Users\ikordis\Documents\GitHub\WebApiWithClassLibrary\Netas.Data\obj\Debug\Netas.Data.pdb
